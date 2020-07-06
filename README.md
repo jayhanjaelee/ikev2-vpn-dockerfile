@@ -8,13 +8,13 @@ First step: Install docker on your system and open port 500 and 4500 for UDP tra
 
 Second step: Run configuration with
 
-`docker run --rm --name=vpn-cfg -it -v /your/path/config:/config cschlosser/ikev2-vpn configure`
+`docker run --rm --name=ikev2-vpn-cfg -it -v /your/path/config:/config jayhanjaelee/ikev2-vpn configure`
 
 Fill in the blanks and everything you need will be generated for you.
 
 Third step: Run
 
-`docker run --rm --name=vpn -d -v /your/path/config:/config --privileged -p 500:500/udp -p 4500:4500/udp cschlosser/ikev2-vpn`
+`docker run --rm --name=ikev2-vpn -d -v /your/path/config:/config --privileged -p 500:500/udp -p 4500:4500/udp jayhanjaelee/ikev2-vpn`
 
 To start the vpn
 
@@ -22,7 +22,7 @@ To start the vpn
 
 Second step: Run
 
-`docker run --rm --name=vpn -it -v /your/path/config:/config --privileged -p 500:500/udp -p 4500:4500/udp cschlosser/ikev2-vpn`
+`docker run --rm --name=ikev2-vpn -it -v /your/path/config:/config --privileged -p 500:500/udp -p 4500:4500/udp jayhanjaelee/ikev2-vpn`
 
 This will run the configuration the first time you're launching the container.
 
